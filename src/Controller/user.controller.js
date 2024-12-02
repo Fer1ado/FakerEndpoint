@@ -86,13 +86,13 @@ mockUserCreate = async (req, res, next) => {
     try {
         const uq = req.body.usersQuant
         const pq = req.body.petsQuant
-        //console.log("🚀 ~ file: user.controller.js:90 ~ ApiUserInterface ~ mockUserCreate= ~ uq:", uq);
-        response = await userAndPetMock(uq, pq)
+        const response = await userAndPetMock(uq, pq)
+        console.log(response)
         if(response.status === "failed"){
             return res.status(404).send(response)
         } else{
-            for (const un in response) {
-                const DBresponse = await userManager.createUser(users[un])
+            for (const un in response.payload) {
+                const DBresponse = await userManager.createUser(response.payload[un])
                 if (DBresponse.status === "failed"){
                     console.log(DBresponse.message)
                     failedArray.push(DBresponse.message)
