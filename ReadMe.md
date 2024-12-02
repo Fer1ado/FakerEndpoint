@@ -9,14 +9,16 @@
 <br>
 <h6  style="text-align:center" > la interfaz grafica solo permite crear usuarios tipo user, para crear usuarios con rol admin es necesario usar el endpoint http://localhost:8080/api/users/register con postman, una vez creado el logueo con la interfaz visual permite navegar al view  http://localhost:8080/adminsection donde se pueden cargar y borrar productos de la DB   </h6> 
 <br>
-<h4  style="text-align:center" > Se agrega la lista completa de endpoints de la app agrupadas con descripcion y comentarios:</h4> 
+<h4  style="text-align:center" > Se agrega la lista completa de endpoints de la app agrupadas con descripcion y comentarios, se marcan en<font color="red"> rojo </font>las dos que se trabajaron para esta entrega </h4> 
 <br> 
 
 
 
 | METHOD         | ROUTE                                       | COMMENT                                                                                                                                                                                      |
 | -------------- | ------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| GET            | /api/products/:pid                          | Busqueda de producto por id                                                                                                                                                                  |
+| POST            |<h6><font color="red" weight="bold" > /api/mocs/generateAndSaveMockDataToDB   </font>             | Recibe por parametros en body: <h6>{<br>"usersQuant": int,<br> "petsQuant: int<br>}</h6> y registra en la base de datos la cantidad de usuarios seleccionada con la cantidad de mascotas que se haya señalado para generar via faker     |
+| POST            |<h6><font color="red" > /api/mocs/generatemockdata   </font>                       | Recibe por parametro en body: <h6>{<br>"usersQuant": int<br>}</h6> y genera mediante faker un listado de usuarios simulando el registro que se vería en base de datos con array vacío de pets, contraseña hasheada y un _id: de mongo      |
+| GET            | /api/products/:pid                          | Busqueda de producto por id       |
 | GET POST       | /api/products                               | GET - Busqueda de producto por sin id acepta pagginate, sort, limit y filtro por status / POST - Agregado de producto a la BD incluye validación básica en caso de que esten faltando campos |
 | PUT DELETE     | /api/products/:id                           | PUT - Modificaicón de productos por id, se actualizan valores y se hace validación básica de campos / DELETE - Elmina el producto con el id especificado                                     |
 | POST           | /api/products/many                          | Ruta de inserción masiva de productos en la DB en caso de que se este corriendo en un cluster nuevo                                                                                          |

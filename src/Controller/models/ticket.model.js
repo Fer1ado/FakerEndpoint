@@ -12,8 +12,7 @@ const ticketSchema = new Schema({
         default: new Date
     },
     cart:{
-        type:[
-        ],
+        type:[],
         default:[]
         
     },

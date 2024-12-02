@@ -20,6 +20,15 @@ const userSchema = new Schema({
         type: String,
         required: true
     },
+    pets:{
+        type: Array,
+        default: []
+    },
+    age:{
+        type: Number,
+        required: false,
+        default: null
+    },
     role: {
         type: String,
         enum: ['admin', 'user'],

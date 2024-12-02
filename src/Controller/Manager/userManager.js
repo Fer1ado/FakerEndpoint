@@ -30,11 +30,11 @@ class UserDao {
             const existUser = await this.existUser(user.email)
             //console.log("🚀 ~ file: userManager.js:32 ~ UserDao ~ createUser ~ existUser:", existUser);
             if(!existUser){
-                //console.log("🚀 ~ file: userManager.js:24 ~ UserDao ~ createUser ~ existUser: creando user", existUser);
+                console.log("🚀 ~ file: userManager.js:24 ~ UserDao ~ createUser ~ existUser: creando user", user);
                 const password = await createHash(user.password)
                 const userDb = {...user, password:password}
                 const newUser = await userModel.create(userDb)
-                //console.log("🚀 ~ file: userManager.js:27 ~ UserDao ~ createUser ~ userDb:", userDb);
+                console.log("🚀 ~ file: userManager.js:27 ~ UserDao ~ createUser ~ userDb:", userDb);
                 return {status: "success", message: "nuevo usuario creado", newUser} 
             } else {
                 return {status: "failed", message: "EL CORREO YA EXISTE", existUser} }
