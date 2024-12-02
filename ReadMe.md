@@ -5,9 +5,6 @@
 
 ---
 <h3  style="text-align:center" >----> TESTING <---</h3> 
-<h6  style="text-align:center" > Mantuve el criterio de hacer funcionar el sitio y los endpoints usando plantillas de handlebars, los endpoints accedidos desde postman funcionan también pero algunos de los mensajes de error son renders de hbs directamente porque puse el acento ahí</h6>
-<br>
-<h6  style="text-align:center" > la interfaz grafica solo permite crear usuarios tipo user, para crear usuarios con rol admin es necesario usar el endpoint http://localhost:8080/api/users/register con postman, una vez creado el logueo con la interfaz visual permite navegar al view  http://localhost:8080/adminsection donde se pueden cargar y borrar productos de la DB   </h6> 
 <br>
 <h4  style="text-align:center" > Se agrega la lista completa de endpoints de la app agrupadas con descripcion y comentarios, se marcan en<font color="red"> rojo </font>las dos que se trabajaron para esta entrega </h4> 
 <br> 
